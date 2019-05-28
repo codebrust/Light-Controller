@@ -12,8 +12,8 @@ public class MQTTClient {
 
     private static final String TAG = "MQTTClient";
     private String mqttBroker = "tcp://iot.eclipse.org:1883";
-    private String mqttTopic = "codifythings/lightcontrl";
-    private String deviceId = "androidClient";
+    private String mqttTopic = "codifythings/lightcontrol";
+    private String deviceId = "androidClient1";
     private String messageContent = "SWITCH";
 
     public void publishToMQTT() throws MqttException {

@@ -23,10 +23,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //TODO - add action
 
-                try{
 
-                }catch (Exception ex){
-                    Log.e(TAG,ex.getMessage());
+                try {
+
+                    new MQTTClient().publishToMQTT();
+
+                } catch (Exception ex) {
+
+                    Log.e(TAG, ex.getMessage());
+
                 }
 
             }
