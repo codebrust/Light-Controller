@@ -11,7 +11,7 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 public class MQTTClient {
 
     private static final String TAG = "MQTTClient";
-    private String mqttBroker = "tcp://iot.eclipse.org:1883";
+    private String mqttBroker = "tcp://test.mosquitto.org:1883";
     private String mqttTopic = "codifythings/lightcontrol";
     private String deviceId = "androidClient1";
     private String messageContent = "SWITCH";
