@@ -16,7 +16,7 @@ public class MQTTClient {
     private String deviceId = "androidClient1";
     private String messageContent = "SWITCH";
 
-    public void publishToMQTT() throws MqttException {
+    public void publishToMQTT(String message) throws MqttException {
         // Request clean session in the connection options.
         Log.i(TAG, "Setting Connection Options");
         MqttConnectOptions options = new MqttConnectOptions();
@@ -31,7 +31,9 @@ public class MQTTClient {
                 new MemoryPersistence());
         client.connect(options);
 
-
+        if(message!=null){
+            messageContent = message;
+        }
 
         // Publish message to topic
         Log.i(TAG, "Publishing to Topic");
@@ -45,6 +47,10 @@ public class MQTTClient {
 
         Log.i(TAG, "Disconnecting from MQTT");
         client.disconnect();
+    }
+
+    public void publishToMQTT() throws Exception {
+        publishToMQTT(null);
     }
 
 }
